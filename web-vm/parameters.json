@@ -1,0 +1,60 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "westeurope"
+        },
+        "virtualMachineName": {
+            "value": "arm-hack-web"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_DS2_v2"
+        },
+        "adminUsername": {
+            "value": "vmadmin"
+        },
+        "virtualNetworkName": {
+            "value": "arm-hackathon-vnet"
+        },
+        "networkInterfaceName": {
+            "value": "arm-hack-web553"
+        },
+        "networkSecurityGroupName": {
+            "value": "arm-hack-web-nsg"
+        },
+        "adminPassword": {
+            "value": null
+        },
+        "diagnosticsStorageAccountName": {
+            "value": "win10hack001rgdiag874"
+        },
+        "diagnosticsStorageAccountId": {
+            "value": "/subscriptions/94075b80-a53d-4d33-b8e1-df23b968b9a4/resourceGroups/win10-hack-001-rg/providers/Microsoft.Storage/storageAccounts/win10hack001rgdiag874"
+        },
+        "subnetName": {
+            "value": "frontendSubnet"
+        },
+        "publicIpAddressName": {
+            "value": "arm-hack-web-ip"
+        },
+        "publicIpAddressType": {
+            "value": "Dynamic"
+        },
+        "publicIpAddressSku": {
+            "value": "Basic"
+        },
+        "autoShutdownStatus": {
+            "value": "Enabled"
+        },
+        "autoShutdownTime": {
+            "value": "19:00"
+        },
+        "autoShutdownTimeZone": {
+            "value": "UTC"
+        },
+        "autoShutdownNotificationStatus": {
+            "value": "Disabled"
+        }
+    }
+}
