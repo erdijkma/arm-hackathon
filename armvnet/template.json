@@ -1,0 +1,59 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "vnetname": {
+            "type": "string"
+        },
+        "location": {
+            "type": "string"
+        },
+        "addressPrefix": {
+            "type": "string"
+        },
+        "subnetNameFrontEnd": {
+            "type": "string"
+        },
+        "subnetNameDatabase": {
+            "type": "string"
+        },
+        "subnetAddressPrefixFrontend": {
+            "type": "string"
+        },
+        "subnetAddressPrefixDatabase": {
+            "type": "string"
+        },
+        "enableDdosProtection": {
+            "type": "string"
+        }
+    },
+    "resources": [
+        {
+            "apiVersion": "2016-12-01",
+            "name": "[parameters('vnetname')]",
+            "type": "Microsoft.Network/virtualNetworks",
+            "location": "[parameters('location')]",
+            "properties": {
+                "addressSpace": {
+                    "addressPrefixes": [
+                        "[parameters('addressPrefix')]"
+                    ]
+                },
+                "subnets": [
+                    {
+                        "name": "[parameters('subnetNameFrontEnd')]",
+                        "properties": {
+                        "addressPrefix": "[parameters('subnetAddressPrefixFrontend')]"
+                        }
+                    },
+                    {
+                        "name": "[parameters('subnetNameDatabase')]",
+                        "properties": {
+                         "addressPrefix": "[parameters('subnetAddressPrefixDatabase')]"
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
