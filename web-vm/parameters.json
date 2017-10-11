@@ -1,0 +1,65 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "westeurope"
+        },
+        "virtualMachineName": {
+            "value": "arm-hack-web01"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_DS1_v2"
+        },
+        "adminUsername": {
+            "value": "vmadmin"
+        },
+        "virtualNetworkName": {
+            "value": "arm-hackathon-vnet"
+        },
+        "networkInterfaceName": {
+            "value": "arm-hack-web01499"
+        },
+        "networkSecurityGroupName": {
+            "value": "arm-hack-web01-nsg"
+        },
+        "AdminPassword": {
+            "reference": {
+              "keyVault": {
+                "id": "/subscriptions/[your subscription ID here]/resourceGroups/arm-hackathon-rg/providers/Microsoft.KeyVault/vaults/arm-keyvault-001"
+              },
+              "secretName": "VMAdminPassword"
+            }
+        },
+        "diagnosticsStorageAccountName": {
+            "value": "armhacklogsa01"
+        },
+        "diagnosticsStorageAccountId": {
+            "value": "/subscriptions/[your subscription ID here]]/resourceGroups/arm-hack-log-rg/providers/Microsoft.Storage/storageAccounts/armhacklogsa01"
+        },
+        "subnetName": {
+            "value": "frontendSubnet"
+        },
+        "publicIpAddressName": {
+            "value": "arm-hack-web01-ip"
+        },
+        "publicIpAddressType": {
+            "value": "Dynamic"
+        },
+        "publicIpAddressSku": {
+            "value": "Basic"
+        },
+        "autoShutdownStatus": {
+            "value": "Enabled"
+        },
+        "autoShutdownTime": {
+            "value": "19:00"
+        },
+        "autoShutdownTimeZone": {
+            "value": "W. Europe Standard Time"
+        },
+        "autoShutdownNotificationStatus": {
+            "value": "Disabled"
+        }
+    }
+}
